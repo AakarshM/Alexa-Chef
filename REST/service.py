@@ -3,7 +3,6 @@ import json
 import os
 import urllib
 
-#import urllib.request
 from bs4 import BeautifulSoup
 from selenium import webdriver
 
@@ -12,12 +11,12 @@ from flask import request
 app = Flask(__name__)
 
 @app.route("/")
-def hello():
+def send_recipe():
     return rest(request.args.get('food'))
 
 @app.route("/test")
 def tst():
-    return "Yo"
+    return "Test GET Endpoint"
 
 def rest(food):
     food = food.replace(" ", "%20")
